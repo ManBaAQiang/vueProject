@@ -36,7 +36,10 @@
         data() {
           return {
             msg: 'UserCenter',
-            count:'改变count的值',
+            count:{
+              type:Number,
+              default:10
+            },
             userID:this.$route.params.id || 0,
             childrenName:'',
           }
