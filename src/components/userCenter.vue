@@ -36,10 +36,7 @@
         data() {
           return {
             msg: 'UserCenter',
-            count:{
-              type:Number,
-              default:10
-            },
+            count:100,
             userID:this.$route.params.id || 0,
             childrenName:'',
           }
