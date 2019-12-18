@@ -10,7 +10,25 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: { //vue-cli提供的解决vue开发环境下跨域问题的方法，http代理中间件，依赖node.js，基本原理是用服务端代理解决浏览器跨域：
+      '/api': {  // 要代理的路径前缀
+        target: 'https://m.ttyingqiu.com/',//设置你调用的接口域名
+        changeOrigin: true,   //开启代理
+        secure: false,      // 如果是https接口，需要配置这个参数  划重点
+        pathRewrite: {  
+          '^/api': '/api'//这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://m.kugou.com/rank/info/?rankid=23784&page=1&json=true'，直接写‘/api/rank/info/?rankid=23784&page=1&json=true’即可  
+        }  
+      },
+      '/test': {  
+        target: 'https://kaijiang.aicai.com',
+        changeOrigin: true,
+        secure: false,      // 如果是https接口，需要配置这个参数  划重点    是否启用安全访问限制
+        // ws:true,
+        pathRewrite: {  
+          '^/test': ''//这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://m.kugou.com/rank/info/?rankid=23784&page=1&json=true'，直接写‘/api/rank/info/?rankid=23784&page=1&json=true’即可  
+        }  
+      }    
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

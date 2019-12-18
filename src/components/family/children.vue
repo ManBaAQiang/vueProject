@@ -36,6 +36,9 @@
             changeName() {
               console.log("childrenName");
               this.$emit('name',this.childrenName);
+            },
+            refsTest() {
+              console.log("refsTest");
             }
         }
     }
