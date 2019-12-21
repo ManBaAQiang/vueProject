@@ -4,21 +4,36 @@
     生命周期函数的演示    ---   {{msg}}
 
     <br>
+	<h1></h1>
     <button @click="setMsg()">执行方法改变msg</button>  
 
 	<br>
+	<h1></h1>
 	<input v-model.lazy="msg" >
 
+	<h1></h1>
 	<div>
 		<router-link to="/user/110/profile">userCenter1</router-link>
 	</div>
+	<h1></h1>
 	<div>
 		<router-link to="/user/120/posts">userCenter2</router-link>
+	</div>
+
+	<h1></h1>
+	<div>
+		<button @click="doPublicService()">全局service</button>  
+	</div>
+
+	<h1></h1>
+	<div>
+		<button @click="doService()">局部service</button>  
 	</div>
   </div>
 </template>
 
 <script>
+	import localService from './js/service';
     export default {
         name: "vueLife",
         data() {
@@ -29,8 +44,16 @@
         methods:{
             setMsg(){
                 this.msg="我是改变后的数据";
-            }
-
+            },
+			
+			doPublicService(){
+				this.service.getMessage("globalService");
+			},
+			
+			doService(){
+				localService.getMessage("localService");
+			}
+			
         },
         //钩子
         beforeCreate: function() {	//进行初始化事件，进行数据的观测

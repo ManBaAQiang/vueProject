@@ -47,6 +47,10 @@
 
         <button @click="handleClick()">userCenter</button>
       </li>
+      <li>
+
+        <button @click="doMessage()">doMessage</button>
+      </li>
     </ul>
     <h2>Ajax</h2>
     <ul>
@@ -144,6 +148,10 @@ export default {
       ).then(this.$axios.spread(function (acct, perms) {
         // 两个请求现在都执行完成
       }));
+    },
+
+    doMessage() {
+      this.service.getMessage("HelloWorld");
     }
 
   },
