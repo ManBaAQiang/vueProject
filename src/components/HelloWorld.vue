@@ -93,10 +93,13 @@ export default {
     //Axios
     getData() {
       //get请求
-      // 为给定 ID 的 user 创建请求 
-      this.$axios.get('/api/new/expert/home?raceType=1',{
-          // handleClick{'Access-Control-Allow-Origin': '*'}
-        }).then(function (response) {
+      this.$axios.get('/api/new/expert/home?raceType=1'
+      // , {
+      //     params: {
+      //       raceType: 1
+      //     }
+      //   }
+        ).then(function (response) {
           console.log(response);
         }).catch(function (error) {
           console.log(error);
@@ -119,9 +122,7 @@ export default {
         gameIndex: 401,
         issueNo: 19175
       };
-
       params = this.$qs.stringify(params);
-
       this.$axios.post(this.HOST+'/open/historyIssue.do', params
       ).then(function (response) {
         console.log(response);
@@ -130,20 +131,18 @@ export default {
       });
     },
 
-    
-    getUserAccount() {
+    // 使用 asyns/await 将axios异步请求同步化处理
+    async getUserAccount() {
       return this.$axios.get('/api/new/expert/home?raceType=1');
     },
     getUserPermissions() {
-      return this.$axios.get('/api/new/expert/home?raceType=1');
+      return this.$axios.get('/api/new/expert/home?raceType=2');
     },
-
     //执行多个并发请求
     doAllAjax() {
-      this.$axios.all([this.getUserAccount(), this.getUserPermissions()]).then(this.$axios.spread(function (acct, perms) {
+      this.$axios.all([this.getUserAccount(), this.getUserPermissions()]
+      ).then(this.$axios.spread(function (acct, perms) {
         // 两个请求现在都执行完成
-
-
       }));
     }
 

@@ -3,8 +3,8 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import axios from 'axios'
-import qs from 'qs' // 引入qs
+import axios from 'axios';
+import qs from 'qs'; // 引入qs
 // import VueAxios from 'vue-axios'
 // import 'vant/lib/index.css';
 
@@ -15,12 +15,11 @@ Vue.config.productionTip = false;
 // Vue.use(Vant);
 
 axios.defaults.timeout = 5000;
-// axios.defaults.baseURL = '/api';
 Vue.prototype.$axios = axios;
+Vue.prototype.HOST = '/test';
+// axios.defaults.baseURL = '/api';
 
 Vue.prototype.$qs = qs;
-
-Vue.prototype.HOST = '/test';
 
 //添加请求拦截器
 // axios.interceptors.request.use(function (config) {
