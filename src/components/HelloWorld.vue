@@ -137,7 +137,7 @@ export default {
 
     // 使用 asyns/await 将axios异步请求同步化处理
     async getUserAccount() {
-      return this.$axios.get('/api/new/expert/home?raceType=1');
+      return this.$axios.get('/api/new/expert/home?raceType=3');
     },
     getUserPermissions() {
       return this.$axios.get('/api/new/expert/home?raceType=2');

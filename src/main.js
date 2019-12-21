@@ -17,7 +17,7 @@ Vue.config.productionTip = false;
 // Vue.use(qs);
 // Vue.use(Vant);
 
-axios.defaults.timeout = 5000;
+// axios.defaults.timeout = 5000; 
 Vue.prototype.$axios = axios;
 Vue.prototype.HOST = '/test';
 // axios.defaults.baseURL = '/api';
