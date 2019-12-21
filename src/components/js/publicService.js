@@ -1,5 +1,5 @@
 //全局service
-exports.install = function (Vue, options) {
+export function install (Vue, options) {
     Vue.prototype.service= {
         getUserInfo(item){
             console.log(item);
