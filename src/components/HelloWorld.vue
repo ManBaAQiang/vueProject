@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Ecosystem</h2>
+    <h1 v-red>{{ msg }}</h1>
+    <h2 v-test="userId">Ecosystem</h2>
     <ul>
       <li>
         <a
@@ -77,6 +77,14 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       userId:123
     }
+  },
+  //局部注册自定义指令
+  directives:{
+  	red:{
+	    inserted:function(el){
+        el.style.background = 'red';
+    }
+  	}
   },
   methods: {
     handleClick() {

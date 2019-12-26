@@ -1,5 +1,5 @@
 //全局函数 service
-export function install (Vue, options) {
+export default function install (Vue, options) {
     Vue.prototype.service= {
         getUserInfo(item){
             console.log(item);
@@ -8,5 +8,5 @@ export function install (Vue, options) {
         getMessage(uid){
             console.log(uid);
         }
-    }
+    };
 }

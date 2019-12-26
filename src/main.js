@@ -8,7 +8,10 @@ import qs from 'qs'; // 引入qs
 // import VueAxios from 'vue-axios'
 // import 'vant/lib/index.css';
 
-import service from './components/js/publicService'
+import service from './components/js/publicService';
+import directivePublic from './public/directivePublic';
+
+Vue.use(directivePublic);
 Vue.use(service);
 
 Vue.config.productionTip = false;

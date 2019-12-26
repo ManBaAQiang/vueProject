@@ -27,6 +27,15 @@ module.exports = {
         pathRewrite: {  
           '^/test': ''//这里理解成用‘/test’代替target里面的地址，后面组件中我们掉接口时直接用test代替 
         }  
+      },
+      '/yaq': {  
+        target: 'http://localhost:8081/',
+        changeOrigin: true,
+        // secure: false,      // 如果是https接口，需要配置这个参数  划重点    是否启用安全访问限制
+        // ws:true,
+        pathRewrite: {  
+          '^/yaq': ''//这里理解成用‘/test’代替target里面的地址，后面组件中我们掉接口时直接用test代替 
+        }  
       }    
     },
 
