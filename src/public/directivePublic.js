@@ -1,3 +1,4 @@
+//自定义全局指令
 export default function directivePublic(Vue){
     Vue.directive('test',{
         inserted:function(el,binding) {
