@@ -11,6 +11,8 @@ import qs from 'qs'; // 引入qs
 import service from './components/js/publicService';
 import directivePublic from './public/directivePublic';
 
+import store from './store/index';
+
 Vue.use(directivePublic);
 Vue.use(service);
 
@@ -52,6 +54,7 @@ Vue.prototype.$qs = qs;
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });

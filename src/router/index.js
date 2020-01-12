@@ -9,6 +9,7 @@ import userPosts from '@/components/user/userPosts';
 import vueLife from '@/components/vueLife';
 import father from '@/components/family/father';
 // import children from '@/components/family/children';
+import vuexTest from '@/components/test/a';
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/test',
+      name: 'vuexTest',
+      component: vuexTest
     },{
       path: '/user/:id',
       name:'userCenter',

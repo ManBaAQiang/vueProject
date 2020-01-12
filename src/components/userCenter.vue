@@ -26,6 +26,10 @@
 
   <router-view></router-view>
 
+  <!-- <navigation-link>
+    <h1>你好，插槽</h1>
+  </navigation-link> -->
+
 </div>
 </template>
 

@@ -51,6 +51,9 @@
 
         <button @click="doMessage()">doMessage</button>
       </li>
+      <li>  
+        <button @click="toTestPage()">Test</button>
+      </li>
     </ul>
     <h2>Ajax</h2>
     <ul>
@@ -100,6 +103,10 @@ export default {
       // // 带查询参数，变成 /user?userId=123
       // this.$router.push({ path: 'user', query: { userId: '123' }});
 
+    },
+
+    toTestPage() {
+      this.$router.push('test');
     },
 
     //Axios
