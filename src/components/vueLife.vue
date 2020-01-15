@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    生命周期函数的演示    ---   {{msg}}
+    生命周期函数的演示    ---   {{message}}
 
     <br>
 	<h1></h1>
@@ -9,7 +9,7 @@
 
 	<br>
 	<h1></h1>
-	<input v-model.lazy="msg" >
+	<input v-model.lazy="message" >
 
 	<h1></h1>
 	<div>
@@ -38,12 +38,12 @@
         name: "vueLife",
         data() {
           return {
-            msg: 'Vue的生命周期'
+            message: 'Vue的生命周期'
           }
         },
         methods:{
             setMsg(){
-                this.msg="我是改变后的数据";
+                this.message="我是改变后的数据";
             },
 			
 			doPublicService(){
@@ -79,7 +79,7 @@
 		mounted: function() {
 		  console.group('------mounted 挂载结束状态------');
 		  console.log("%c%s", "color:red","el     : " + this.$el); //已被初始化
-		  console.log(this.$el);    
+		  console.log(this.$el,this.$data,this.message);    
 		  console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
 		  console.log("%c%s", "color:red","message: " + this.message); //已被初始化 
 		},
