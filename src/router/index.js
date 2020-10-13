@@ -8,7 +8,7 @@ import userProfile from '@/components/user/userProfile';
 import userPosts from '@/components/user/userPosts';
 import vueLife from '@/components/vueLife';
 import father from '@/components/family/father';
-// import children from '@/components/family/children';
+import Home from '@/template/Home';
 import vuexTest from '@/components/test/a';
 
 Vue.use(Router);
@@ -17,6 +17,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Home',
+      component: Home,
+    },
+    {
+      path: '/helloWorld',
       name: 'HelloWorld',
       component: HelloWorld
     },

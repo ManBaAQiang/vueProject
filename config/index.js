@@ -10,7 +10,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static', // 静态资源文件夹
     assetsPublicPath: '/',  // 发布路径
-    proxyTable: { //vue-cli提供的解决vue开发环境下跨域问题的方法，http代理中间件，依赖node.js，基本原理是用服务端代理解决浏览器跨域：
+    proxyTable: { //vue-cli提供的解决vue开发环境下跨域问题的方法，http代理中间件，依赖node.js，基本原理是用服务端代理解决浏览器跨域：（fix：做技术分享时大佬们说这不是跨域，本地跑不存在，哈哈）
       '/api': {  // 要代理的路径前缀
         target: 'https://m.ttyingqiu.com/',//设置你调用的接口域名
         changeOrigin: true,   //开启代理
@@ -31,10 +31,10 @@ module.exports = {
       '/yaq': {  
         target: 'http://localhost:8081/',
         changeOrigin: true,
-        // secure: false,      // 如果是https接口，需要配置这个参数  划重点    是否启用安全访问限制
+        // secure: false,
         // ws:true,
         pathRewrite: {  
-          '^/yaq': ''//这里理解成用‘/test’代替target里面的地址，后面组件中我们掉接口时直接用test代替 
+          '^/yaq': ''//这里理解成用‘/yaq’代替target里面的地址，后面组件中我们掉接口时直接用yaq代替
         }  
       }    
     },

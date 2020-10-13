@@ -2,6 +2,9 @@
   <div class="hello">
     <h1 v-red>{{ msg }}</h1>
     <h2 v-test="userId">Ecosystem</h2>
+    <div v-for="(item, index) in arr1" :key="index">
+      <span @click="changeIndex(index)"> {{item}} </span>  
+    </div>
     <ul>
       <li>
         <a
@@ -73,12 +76,14 @@
 </template>
 
 <script>
+import Vue from 'vue';
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      userId:123
+      userId:123,
+      arr1:[true,true,false,false,false,false]
     }
   },
   //局部注册自定义指令
@@ -90,6 +95,13 @@ export default {
   	}
   },
   methods: {
+    changeIndex(index) {
+      console.info(index,this.arr1[index]);
+      this.arr1[index] = !this.arr1[index];
+      this.$set(this.arr1,index,this.arr1[index]);
+      console.info(this.arr1,this.arr1[index]);
+    },
+
     handleClick() {
       // 事件页面跳转
       this.$router.push({ path: 'user/'+this.userId});

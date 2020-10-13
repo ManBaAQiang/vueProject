@@ -29,4 +29,6 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## git@github.com:ManBaAQiang/vueProject.git
+## git@github.com:ManBaAQiang/vueProject.git  项目github地址
+
+## 所用项目组件页面统一放在template文件夹，components当时是联系vue时临时文件夹，后期可能会出现规范命名上的冲突，需优化
